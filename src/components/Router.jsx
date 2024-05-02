@@ -9,7 +9,7 @@ export function Router ({ children, routes = [], defaultComponent: DefaultCompon
   const [currentPath, setPath] = useState(getCurrentPath())
 
   const routeParams = {}
-
+  console.log(currentPath)
   const childrenRoutes = Children.map(children, ({ props, type }) => {
     const { name } = type
 

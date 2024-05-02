@@ -19,13 +19,14 @@ export function Router ({ children, routes = [], defaultComponent: DefaultCompon
   }) || []
 
   const routesToUse = [...routes, ...childrenRoutes]
-
+  console.log(routesToUse)
   const Component = routesToUse.find(({ path }) => {
+    console.log(path, currentPath)
     if (path === currentPath) return true
-
     const matchPath = match(path, { decode: decodeURIComponent })
 
     if (matchPath(currentPath)) {
+      console.log(matchPath(currentPath))
       routeParams.params = matchPath(currentPath).params
       return true
     }

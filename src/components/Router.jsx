@@ -12,11 +12,12 @@ export function Router ({ children, routes = [], defaultComponent: DefaultCompon
   console.log(currentPath)
   const childrenRoutes = Children.map(children, ({ props, type }) => {
     const { name } = type
-
+    console.log(name)
     if (name !== 'Route') return null
 
     return props
-  }) || []
+  })
+  console.log(childrenRoutes)
 
   const routesToUse = [...routes, ...childrenRoutes]
   console.log(routesToUse)

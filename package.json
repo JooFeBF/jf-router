@@ -1,16 +1,15 @@
 {
   "name": "jf-router",
-  "private": false,
-  "main": "index.js",
-  "module": "index.js",
+  "main": "./lib/src/index.js",
+  "module": "./lib/src/index.js",
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js"
+      "import": "./lib/src/index.js",
+      "require": "./lib/src/index.js"
     },
     "./package.json": "./package.json"
   },
-  "version": "0.0.1",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,7 +17,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "prepare": "pnpm run test && swc src/components src/utils src/constants src/index.jsx -d lib"
+    "prepare": "swc src/components src/utils src/constants src/index.jsx -d lib"
   },
   "dependencies": {
     "path-to-regexp": "^6.2.2"

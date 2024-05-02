@@ -11,11 +11,11 @@ export function Router ({ children, routes = [], defaultComponent: DefaultCompon
   const routeParams = {}
   console.log(currentPath)
   const childrenRoutes = Children.map(children, ({ props, type }) => {
-    const { name } = type
+    const { displayName } = type
 
-    console.log(name)
+    console.log(displayName)
 
-    if (name !== 'Route') return null
+    if (displayName !== 'Route') return null
 
     return props
   })
